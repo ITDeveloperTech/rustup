@@ -1,0 +1,1 @@
+This repository for my local opinions for a Rust
