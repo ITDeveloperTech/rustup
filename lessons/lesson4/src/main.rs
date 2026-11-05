@@ -26,6 +26,26 @@ fn main() {
         i += 1;
         println!("{word}");
     }
+
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+
+    let mut output = String::from("");
+    for item in slice {
+        output.push_str(&item.to_string());
+        output.push_str(" ");
+    }
+    println!("slice - {output}");
+
+    assert_eq!(slice, &[2,3]);
+
+    let mut output = String::from("");
+    for item in slice {
+        output.push_str(&item.to_string());
+        output.push_str(" ");
+    }
+    println!("slice = {output}");
+
 }
 
 fn calculate_length(s: String) -> (String, usize) {
@@ -54,7 +74,7 @@ fn search_space(s: &String) -> usize{
     s.len()
 }
 
-fn get_word(s: &String, word_i: usize) -> &str {
+fn get_word(s: &str, word_i: usize) -> &str {
     let bytes = s.as_bytes();
     let mut word_index = 0;
     let mut last_index = 0;
